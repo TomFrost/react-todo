@@ -1,0 +1,37 @@
+{
+  "name": "parcel-react-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "rimraf dist && parcel build index.html"
+  },
+  "keywords": [
+    "parcel",
+    "react",
+    "todo"
+  ],
+  "author": "David Higgins",
+  "license": "ISC",
+  "dependencies": {
+    "mobx": "^4.0.0 || ^5.0.0",
+    "mobx-react": "^5.4.3",
+    "react": "^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0",
+    "react-dom": "^16.4.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.85.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "parcel-bundler": "^1.8.1",
+    "rimraf": "^2.6.2"
+  }
+}
