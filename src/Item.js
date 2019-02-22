@@ -7,7 +7,8 @@ const Item = observer(class Item extends Component {
     return (
       <List.Item>
         <Checkbox toggle checked={ !!this.props.item.complete } onChange={ () => { this.props.onComplete(this.props.item) } } />
-        <Input defaultValue={this.props.item.name} onChange={ () => this.onChange } />
+        &nbsp;
+        <Input defaultValue={this.props.item.label} onChange={ () => this.onChange } />
       </List.Item>
     );
   }

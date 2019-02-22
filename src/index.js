@@ -10,4 +10,4 @@ import TodoStore from './TodoStore';
 
 const store = new TodoStore();
 
-render(<App list={ store } />, document.getElementById('root'));
+render(<App todos={ store } />, document.getElementById('root'));
