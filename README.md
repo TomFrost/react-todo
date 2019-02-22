@@ -1,0 +1,1 @@
+This is a simple Todo App sample built using [React.js](https://reactjs.org/), [MobX](https://mobx.js.org/), [Semantic UI](https://react.semantic-ui.com) and built with [Parcel](https://parceljs.org/).
