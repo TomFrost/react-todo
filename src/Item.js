@@ -1,22 +1,44 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import { List, Checkbox, Input } from 'semantic-ui-react';
+import { List, Checkbox, Input, Segment } from 'semantic-ui-react';
+
+import './Item.scss';
 
 const Item = observer(class Item extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editting: false
+    };
+  }
   render() {
     return (
-      <List.Item>
-        <Checkbox toggle checked={ !!this.props.item.complete } onChange={ () => { this.props.onComplete(this.props.item) } } />
+      <List.Item className="todo-item">
+        <Checkbox toggle checked={ this.isComplete() } onChange={ () => { this.props.onComplete(this.props.item) } } />
         &nbsp;
-        <Input defaultValue={this.props.item.label} onChange={ () => this.onChange } />
+        { !this.state.editting ? <span className={ "label " + (this.isComplete() ? 'complete' : '') } onDoubleClick={ () => this.onEditting() } >{ this.props.item.label }</span> : null }
+        { this.state.editting ? <Input defaultValue={this.props.item.label} autoFocus onKeyUp={ $event => this.onChange($event) } /> : null }
       </List.Item>
     );
   }
 
-  onChange($event) {
-      if(!this.props.onChange) return;
+  isComplete() {
+    return !!this.props.item.complete;
+  }
 
-      this.props.OnChange(this.props.item, $event.target.value);
+  onEditting() {
+    console.log('onEditting', this.state.editting);
+    this.setState({ editting: !this.state.editting });
+  }
+
+  onChange($event) {
+    if($event.keyCode === 27) {
+      this.setState({ editting: false });
+      return;
+    }
+    if($event.keyCode !== 13) return;
+    this.props.item.label = $event.target.value
+    this.setState({ editting: false });
   }
 });
 

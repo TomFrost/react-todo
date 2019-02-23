@@ -9,7 +9,7 @@ const App = observer(class App extends Component {
   render() {
 
     let itemsList = this.props.todos.visible.map((item, index) => {
-      return <Item key={index} item={ item } onComplete={ () => this.props.todos.toggle(item) } onChange={ this.handleItemUpdate } />
+      return <Item key={index} item={ item } onComplete={ () => this.props.todos.toggle(item) } />
     });
 
     return (

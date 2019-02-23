@@ -1,0 +1,14 @@
+.todo-item {
+    .label {
+        font-size: 1.2em;
+        font-weight: 600;
+        line-height: 1.5em;
+        margin-left: 1em;
+
+        &.complete {
+            text-decoration: line-through;
+            font-style: italic;
+            font-weight: 300;
+        }
+    }
+}
